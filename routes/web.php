@@ -18,8 +18,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test-user', function () {
+Route::get('/apprentices', function () {
     return response()->json([
-        'name' => "Ashley SOlomon"
+        0 => [
+            'name' => 'Ashley Solomon'
+        ],
+        1 => [
+            'name' => 'Emman Lemon'
+        ]
     ]);
 });
