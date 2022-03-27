@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+$apprentices = [
+    0 => [
+        'name' => 'ashley',
+    ],
+    1 => [
+        'name' => 'emman',
+    ]
+];
 
-Route::get('/apprentices', function () {
-    return response()->json([
-        0 => [
-            'name' => 'Ashley Solomon'
-        ],
-        1 => [
-            'name' => 'Emman Lemon'
-        ]
-    ]);
+Route::get('/sample/{name}', function ($name)  use ($apprentices) {
+    $apprentice=  collect($apprentices)->where('name',$name);
+    return response()->json($apprentice);
+
 });
+
+
+/***
+ * Laravel Collection
+ *  $apprentice = collect($apprentices)->where('name', $name);
+*/
+//
+
+
+
