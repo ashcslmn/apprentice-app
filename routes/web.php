@@ -20,10 +20,10 @@ Route::get('/', function () {
 
 $apprentices = [
     0 => [
-        'name' => 'marj',
+        'name' => 'crisyan',
     ],
     1 => [
-        'name' => 'emman',
+        'name' => 'jers',
     ]
 ];
 
